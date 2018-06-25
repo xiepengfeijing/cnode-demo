@@ -1,5 +1,5 @@
 exports.showSignin = (req, res) => {
-    res.send("showSignin")
+    res.render('signin.html')
 }
 
 exports.handleSignin = (req, res) => {
