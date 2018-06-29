@@ -1,23 +1,21 @@
-exports.showTopic = (req, res) => {
-    res.send("showTopic")
-}
+exports.showTopic = (req,res) => {
 
-exports.handleTopic = (req, res) => {
-    res.send("handleTopic")
 }
+exports.handelTopic = (req,res) => {
 
-exports.showTopicID = (req, res) => {
-    res.send("showTopicID")
 }
+exports.showTopicDet = (req,res) => {
 
-exports.showEdit = (req, res) => {
-    res.send("showEdit")
 }
+exports.handleTopicDet = (req,res) => {
 
-exports.handleTopicID = (req, res) => {
-    res.send("handleTopicID")
 }
+exports.showTopicEdit = (req,res) => {
 
-exports.hanleDelete = (req, res) => {
-    res.send("hanleDelete")
+}
+exports.handleTopicEdit = (req,res) => {
+
+}
+exports.handleTopicDel = () => {
+
 }

@@ -40,6 +40,19 @@
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script>
         // 处理表单提交
+        $('#signin_form').on('submit',function(e){
+            e.preventDefault();
+            var formData = $('#signin_form').serialize()
+            $.ajax({
+                type:'post',
+                data:formData,
+                url:'/signin',
+                success:function(data){
+                    alert(data.msg);
+                    location.href = '/';
+                }
+            })
+        })
     </script>
 </body>
 

@@ -1,35 +1,25 @@
-// 1 安装express
-// 2 express.Router() 
-// 3 router.get()
-// 4 导出router
-// 5 在app.js导入 并且 挂载路由 app.use(router)
-var express = require('express')
-var user = require('./controllers/user')
-var topic = require('./controllers/topic')
+var express = require('express');
 var index = require('./controllers/index')
-
-var router = express.Router()
-
-// 首页路由
-router.get('/', index.showIndex)
-
-// 用户路由
+var user = require('./controllers/user.js')
+var topic = require('./controllers/topic')
+var router = express.Router();
+//index.js
+router.get('/', index.showIndex);
+//user.js
 router
-    .get('/signin', user.showSignin)
-    .post('/signin', user.handleSignin)
-    .get('/signup', user.showSignup)
-    .post('/signup', user.handleSignup)
-    .post('/signout', user.handleSignout)
-
-
-// 话题路由
+	.get('/signin', user.showSignIn)
+	.post('/signin', user.handleSignIn)
+	.get('/signup', user.showSignUp)
+	.post('/signup', user.handleSignUp)
+	.get('/signout', user.handleSignOut)
+//topic.js
 router
-    .get('/topic/create', topic.showTopic)
-    .post('/topic/create', topic.handleTopic)
-    .get('/topic/:topicID', topic.showTopicID)
-    .get('/topic/:topicID/edit', topic.showEdit)
-    .post('/topic/:topicID/edit', topic.handleTopicID)
-    .post('/topic/:topicID/delete', topic.hanleDelete)
+	.get('/topic/create', topic.showTopic)
+	.post('/topic/create', topic.handelTopic)
+	.get('/topic/:topicID', topic.showTopicDet)
+	.post('/topic/:topicID', topic.handleTopicDet)
+	.get('/topic/:topicID/edit', topic.showTopicEdit)
+	.post('/topic/:topicID/edit', topic.handleTopicEdit)
+	.post('/topic/:topicID/delete', topic.handleTopicDel)
 
-
-module.exports = router
+module.exports = router;
